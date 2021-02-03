@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="aPe-q0-7wW" customClass="TrackView" customModule="DynamicTypeDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="286"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hzP-mI-rLH">
+                    <rect key="frame" x="0.0" y="142" width="414" height="2"/>
+                    <color key="backgroundColor" name="defaultBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="Vhp-wW-8bh"/>
+                    </constraints>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="PJH-Op-nie">
+                    <rect key="frame" x="0.0" y="138" width="414" height="10"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="Dkb-OV-Zn3"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="nd2-ng-KPl"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="hzP-mI-rLH" firstAttribute="centerY" secondItem="aPe-q0-7wW" secondAttribute="centerY" id="ERG-bC-b7U"/>
+                <constraint firstItem="PJH-Op-nie" firstAttribute="centerY" secondItem="aPe-q0-7wW" secondAttribute="centerY" id="HpG-Ft-oN6"/>
+                <constraint firstItem="hzP-mI-rLH" firstAttribute="width" secondItem="aPe-q0-7wW" secondAttribute="width" id="L9Y-na-FEE"/>
+                <constraint firstItem="PJH-Op-nie" firstAttribute="centerX" secondItem="aPe-q0-7wW" secondAttribute="centerX" id="bYu-B0-HUl"/>
+                <constraint firstItem="hzP-mI-rLH" firstAttribute="centerX" secondItem="aPe-q0-7wW" secondAttribute="centerX" id="enb-HO-qlG"/>
+                <constraint firstItem="PJH-Op-nie" firstAttribute="width" secondItem="aPe-q0-7wW" secondAttribute="width" id="evt-hh-fJi"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="lineView" destination="hzP-mI-rLH" id="S9Y-Xp-tPw"/>
+                <outlet property="lineViewHeightConstraint" destination="Vhp-wW-8bh" id="k4q-Rn-mSP"/>
+                <outlet property="markStackView" destination="PJH-Op-nie" id="cc6-3r-ToO"/>
+                <outlet property="markViewHeightConstraint" destination="Dkb-OV-Zn3" id="46i-JW-dSu"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="356.91964285714283"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="defaultBackgroundColor">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
