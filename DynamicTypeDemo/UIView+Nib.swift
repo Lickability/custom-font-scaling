@@ -18,13 +18,6 @@ extension UIView {
         return UINib(nibName: nibName, bundle: bundle).instantiate(withOwner: nil, options: nil).first as? T
     }
     
-    /// Helper function to instantiate a `UIView` using its class name to instantiate the nib.
-    ///
-    /// - Returns: An optional version of its self with nib instantiated.
-    static func instantiateViewFromNib(bundle: Bundle? = nil) -> Self? {
-        return instantiateViewFromNib(defaultNibName(), bundle: bundle)
-    }
-    
     private static func defaultNibName() -> String {
         return String(describing: self)
     }

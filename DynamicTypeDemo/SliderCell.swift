@@ -27,6 +27,9 @@ class SliderCell: UITableViewCell {
         /// The height of a mark on the track view.
         let markHeight: CGFloat
         
+        /// Whether the slider is enabled.
+        let isEnabled: Bool
+        
         /// Closure for configuring the `UISlider`.
         let configureSlider: (UISlider) -> Void
     }
@@ -45,17 +48,20 @@ class SliderCell: UITableViewCell {
     /// The view model containing information necessary for configuring the display. Setting this property updates the display of the view.
     var viewModel: ViewModel? {
         didSet {
-            slider.maximumValue = viewModel?.maxValue ?? 0.0
-            slider.minimumValue = viewModel?.minValue ?? 0.0
+            guard let viewModel = viewModel else {
+                return
+            }
+            slider.maximumValue = viewModel.maxValue
+            slider.minimumValue = viewModel.minValue
             
-            let numberOfSteps = viewModel?.numberOfSteps ?? 0
-            let lineHeight = viewModel?.lineHeight ?? 0
-            let markHeight = viewModel?.markHeight ?? 0
+            let numberOfSteps = viewModel.numberOfSteps
+            let lineHeight = viewModel.lineHeight
+            let markHeight = viewModel.markHeight 
             
-            
+            slider.isEnabled = viewModel.isEnabled
             trackView.viewModel = TrackView.ViewModel(lineColor: .white, lineHeight: lineHeight, markColor: .red, markHeight: markHeight, numberOfMarks: numberOfSteps)
             
-            viewModel?.configureSlider(slider)
+            viewModel.configureSlider(slider)
             lastSliderValue = slider.value
         }
     }

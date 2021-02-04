@@ -11,14 +11,8 @@ import WebKit
 class DetailViewController: UITableViewController {
     
     let preferences = Preferences()
-    
-    private lazy var webView: WKWebView = {
-        let preferences = WKWebpagePreferences()
-        preferences.allowsContentJavaScript = false
-        let configuration = WKWebViewConfiguration()
-        configuration.defaultWebpagePreferences = preferences
-        return WKWebView(frame: .zero, configuration: configuration)
-    }()
+    let systemSizeSwitch = UISwitch()
+    private let webView = WKWebView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,21 +21,28 @@ class DetailViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "webViewCell")
         tableView.tableFooterView = UIView()
         tableView.separatorColor = .clear
-        NotificationCenter.default.addObserver(self, selector: #selector(contentSizeDidChange(_:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
+        setupFont()
     }
     
-    @objc private func contentSizeDidChange(_ notification: Notification) {
-        let contentSizeCategory: UIContentSizeCategory
-
-        if preferences.shouldUseUserSelectedContentSizeCategory, let userSelectedContentSizeCategory = preferences.userSelectedContentSizeCategory {
-            contentSizeCategory = userSelectedContentSizeCategory
-        } else {
-            contentSizeCategory = UITraitCollection.current.preferredContentSizeCategory
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+       setupFont()
+  }
+    
+    private func setupFont() {
+        var scaledFont: UIFont!
+        let styles: [UIFont.TextStyle] = [.headline, .body]
+        for style in styles {
+            scaledFont = UIFontMetrics(forTextStyle: style).scaledFont(for: .preferredFont(forTextStyle: style), compatibleWith: traitCollection)
         }
-
-        let traitCollection = UITraitCollection(preferredContentSizeCategory: contentSizeCategory)
-        setOverrideTraitCollection(traitCollection, forChild: self)
-        webView.reload()
+    
+        guard let localHTMLURL = Bundle.main.url(forResource: "example", withExtension: "html"),
+              let htmlString = try? String(contentsOf: localHTMLURL) else {
+                return
+        }
+        
+        let fontSetting = "<span style=\"font-family: \(scaledFont.fontName);font-size: \(scaledFont.pointSize)\"</span>"
+        webView.loadHTMLString( fontSetting + htmlString, baseURL: nil)
     }
     
     @objc private func systemSizeSwitchTapped(sender: UISwitch) {
@@ -61,28 +62,26 @@ class DetailViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 2 {
-            return 500
+            return 300
         }
         
         return UITableView.automaticDimension
     }
-    
-    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
-    }
+
     
     // MARK: - UITableViewDataSource
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
         if indexPath.section == 0 {
-            let systemSizeSwitch = UISwitch()
             systemSizeSwitch.isOn = !preferences.shouldUseUserSelectedContentSizeCategory
             systemSizeSwitch.addTarget(self, action: #selector(systemSizeSwitchTapped(sender:)), for: .touchUpInside)
             
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "switchCell") else {
                 return UITableViewCell()
             }
+            cell.textLabel?.font = .preferredFont(forTextStyle: .headline)
+            cell.textLabel?.adjustsFontForContentSizeCategory = true
             cell.contentView.addSubview(systemSizeSwitch)
             cell.textLabel?.textAlignment = .right
             cell.textLabel?.text = "System Size"
@@ -93,7 +92,8 @@ class DetailViewController: UITableViewController {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SliderCell.defaultNibName, for: indexPath) as? SliderCell else {
                 return UITableViewCell()
             }
-            cell.viewModel = SliderCell.ViewModel(numberOfSteps: 5, minValue: 1, maxValue: 5, lineHeight: 2, markHeight: 8, configureSlider: { [weak self] slider in
+            let isEnabled = preferences.shouldUseUserSelectedContentSizeCategory == true
+            cell.viewModel = SliderCell.ViewModel(numberOfSteps: 5, minValue: 1, maxValue: 5, lineHeight: 2, markHeight: 8, isEnabled: isEnabled, configureSlider: { [weak self] slider in
                 slider.value = self?.preferences.userSelectedContentSizeCategory?.sliderValue ?? 1.0
             })
             
@@ -101,7 +101,6 @@ class DetailViewController: UITableViewController {
                 self?.preferences.userSelectedContentSizeCategory = UIContentSizeCategory.category(forSliderValue: newValue)
                 
                 NotificationCenter.default.post(name: UIContentSizeCategory.didChangeNotification, object: nil)
-                tableView.reloadData()
             }
             return cell
         } else if indexPath.section == 2 {
@@ -111,9 +110,6 @@ class DetailViewController: UITableViewController {
             }
             webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             webView.frame = cell.contentView.bounds
-            if let url = Bundle.main.url(forResource: "example", withExtension: "html") {
-                webView.loadFileURL(url, allowingReadAccessTo: url)
-            }
             cell.contentView.addSubview(webView)
             return cell 
         }

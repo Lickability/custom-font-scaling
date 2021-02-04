@@ -14,9 +14,8 @@
 		AB0E68CB25C9CE1A00F17D62 /* TrackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0E68CA25C9CE1A00F17D62 /* TrackView.xib */; };
 		AB0E68CE25C9CE2700F17D62 /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0E68CD25C9CE2700F17D62 /* TrackView.swift */; };
 		AB0E68D125C9FE4200F17D62 /* example.html in Resources */ = {isa = PBXBuildFile; fileRef = AB0E68D025C9FE4200F17D62 /* example.html */; };
-		AB0E68D625CA02A000F17D62 /* stylesheet.css in Resources */ = {isa = PBXBuildFile; fileRef = AB0E68D525CA02A000F17D62 /* stylesheet.css */; };
-		AB0E68E325CA127900F17D62 /* lickability.png in Resources */ = {isa = PBXBuildFile; fileRef = AB0E68E225CA127900F17D62 /* lickability.png */; };
 		AB0E68EE25CA2A0A00F17D62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0E68ED25CA2A0A00F17D62 /* SceneDelegate.swift */; };
+		AB0E68F325CB42A700F17D62 /* FontScalingNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0E68F225CB42A700F17D62 /* FontScalingNavigationController.swift */; };
 		ABDE600E25C8AB6E00B6369B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDE600D25C8AB6E00B6369B /* AppDelegate.swift */; };
 		ABDE601525C8AB6E00B6369B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABDE601325C8AB6E00B6369B /* Main.storyboard */; };
 		ABDE601725C8AB6F00B6369B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABDE601625C8AB6F00B6369B /* Assets.xcassets */; };
@@ -32,9 +31,8 @@
 		AB0E68CA25C9CE1A00F17D62 /* TrackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackView.xib; sourceTree = "<group>"; };
 		AB0E68CD25C9CE2700F17D62 /* TrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
 		AB0E68D025C9FE4200F17D62 /* example.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = example.html; sourceTree = "<group>"; };
-		AB0E68D525CA02A000F17D62 /* stylesheet.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = stylesheet.css; sourceTree = "<group>"; };
-		AB0E68E225CA127900F17D62 /* lickability.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lickability.png; path = ../../../Desktop/lickability.png; sourceTree = "<group>"; };
 		AB0E68ED25CA2A0A00F17D62 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		AB0E68F225CB42A700F17D62 /* FontScalingNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontScalingNavigationController.swift; sourceTree = "<group>"; };
 		ABDE600A25C8AB6E00B6369B /* DynamicTypeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicTypeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABDE600D25C8AB6E00B6369B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABDE601425C8AB6E00B6369B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,7 +72,7 @@
 		ABDE600C25C8AB6E00B6369B /* DynamicTypeDemo */ = {
 			isa = PBXGroup;
 			children = (
-				AB0E68E225CA127900F17D62 /* lickability.png */,
+				AB0E68F225CB42A700F17D62 /* FontScalingNavigationController.swift */,
 				AB0E68ED25CA2A0A00F17D62 /* SceneDelegate.swift */,
 				ABDE600D25C8AB6E00B6369B /* AppDelegate.swift */,
 				ABDE601325C8AB6E00B6369B /* Main.storyboard */,
@@ -89,7 +87,6 @@
 				AB0E68CA25C9CE1A00F17D62 /* TrackView.xib */,
 				AB0E68CD25C9CE2700F17D62 /* TrackView.swift */,
 				AB0E68D025C9FE4200F17D62 /* example.html */,
-				AB0E68D525CA02A000F17D62 /* stylesheet.css */,
 			);
 			path = DynamicTypeDemo;
 			sourceTree = "<group>";
@@ -153,11 +150,9 @@
 			files = (
 				ABDE601A25C8AB6F00B6369B /* LaunchScreen.storyboard in Resources */,
 				AB0E68BA25C8ECD900F17D62 /* SliderCell.xib in Resources */,
-				AB0E68D625CA02A000F17D62 /* stylesheet.css in Resources */,
 				ABDE601725C8AB6F00B6369B /* Assets.xcassets in Resources */,
 				ABDE601525C8AB6E00B6369B /* Main.storyboard in Resources */,
 				AB0E68CB25C9CE1A00F17D62 /* TrackView.xib in Resources */,
-				AB0E68E325CA127900F17D62 /* lickability.png in Resources */,
 				AB0E68D125C9FE4200F17D62 /* example.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,6 +168,7 @@
 				ABDE600E25C8AB6E00B6369B /* AppDelegate.swift in Sources */,
 				ABDE602725C8B9F500B6369B /* Preferences.swift in Sources */,
 				AB0E68CE25C9CE2700F17D62 /* TrackView.swift in Sources */,
+				AB0E68F325CB42A700F17D62 /* FontScalingNavigationController.swift in Sources */,
 				AB0E68C125C907D800F17D62 /* DetailViewController.swift in Sources */,
 				AB0E68BD25C8ECF400F17D62 /* SliderCell.swift in Sources */,
 				AB0E68EE25CA2A0A00F17D62 /* SceneDelegate.swift in Sources */,
