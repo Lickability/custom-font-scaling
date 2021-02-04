@@ -7,8 +7,10 @@
 
 import UIKit
 
-class FontScalingNavigationController: UINavigationController {
-
+final class FontScalingNavigationController: UINavigationController {
+    
+    // MARK: - UINavigationController
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerForOverrideNotifications()
@@ -23,16 +25,16 @@ class FontScalingNavigationController: UINavigationController {
     }
 }
 
-fileprivate extension UIViewController {
+private extension UIViewController {
     func registerForOverrideNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(overrideChildrenContentSizeCategories), name: UIContentSizeCategory.didChangeNotification, object: nil)
     }
     
     func overrideContentSizeCategory(_ child: UIViewController) {
         
-        // Local storage
+        // Local storage.
         let preferences = Preferences()
-
+        
         let contentSizeCategory: UIContentSizeCategory
         
         // Whether to use the user-selected content size category or the system one.

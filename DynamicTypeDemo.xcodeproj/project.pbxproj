@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB0AF47B25CC907800E2E4E7 /* RobotoMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB0AF47A25CC907800E2E4E7 /* RobotoMono-Regular.ttf */; };
+		AB0AF47E25CC90A800E2E4E7 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB0AF47D25CC90A800E2E4E7 /* Roboto-Italic.ttf */; };
+		AB0AF48425CC94A100E2E4E7 /* stylesheet.css in Resources */ = {isa = PBXBuildFile; fileRef = AB0AF48325CC94A100E2E4E7 /* stylesheet.css */; };
+		AB0AF48825CCA46200E2E4E7 /* UITableView+NibRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0AF48725CCA46200E2E4E7 /* UITableView+NibRegistration.swift */; };
 		AB0E68BA25C8ECD900F17D62 /* SliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0E68B925C8ECD900F17D62 /* SliderCell.xib */; };
 		AB0E68BD25C8ECF400F17D62 /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0E68BC25C8ECF400F17D62 /* SliderCell.swift */; };
 		AB0E68C125C907D800F17D62 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0E68C025C907D800F17D62 /* DetailViewController.swift */; };
@@ -16,7 +20,6 @@
 		AB0E68D125C9FE4200F17D62 /* example.html in Resources */ = {isa = PBXBuildFile; fileRef = AB0E68D025C9FE4200F17D62 /* example.html */; };
 		AB0E68EE25CA2A0A00F17D62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0E68ED25CA2A0A00F17D62 /* SceneDelegate.swift */; };
 		AB0E68F325CB42A700F17D62 /* FontScalingNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0E68F225CB42A700F17D62 /* FontScalingNavigationController.swift */; };
-		AB0E691525CBB6AD00F17D62 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB0E691425CBB6AD00F17D62 /* Roboto-Italic.ttf */; };
 		ABDE600E25C8AB6E00B6369B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDE600D25C8AB6E00B6369B /* AppDelegate.swift */; };
 		ABDE601525C8AB6E00B6369B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABDE601325C8AB6E00B6369B /* Main.storyboard */; };
 		ABDE601725C8AB6F00B6369B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABDE601625C8AB6F00B6369B /* Assets.xcassets */; };
@@ -25,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB0AF47A25CC907800E2E4E7 /* RobotoMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Regular.ttf"; sourceTree = "<group>"; };
+		AB0AF47D25CC90A800E2E4E7 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		AB0AF48325CC94A100E2E4E7 /* stylesheet.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = stylesheet.css; sourceTree = "<group>"; };
+		AB0AF48725CCA46200E2E4E7 /* UITableView+NibRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+NibRegistration.swift"; sourceTree = "<group>"; };
 		AB0E68B925C8ECD900F17D62 /* SliderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderCell.xib; sourceTree = "<group>"; };
 		AB0E68BC25C8ECF400F17D62 /* SliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
 		AB0E68C025C907D800F17D62 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -34,7 +41,6 @@
 		AB0E68D025C9FE4200F17D62 /* example.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = example.html; sourceTree = "<group>"; };
 		AB0E68ED25CA2A0A00F17D62 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AB0E68F225CB42A700F17D62 /* FontScalingNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontScalingNavigationController.swift; sourceTree = "<group>"; };
-		AB0E691425CBB6AD00F17D62 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
 		ABDE600A25C8AB6E00B6369B /* DynamicTypeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicTypeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABDE600D25C8AB6E00B6369B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABDE601425C8AB6E00B6369B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,6 +61,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB0AF48A25CCA5C100E2E4E7 /* HTML */ = {
+			isa = PBXGroup;
+			children = (
+				AB0E68D025C9FE4200F17D62 /* example.html */,
+				AB0AF48325CC94A100E2E4E7 /* stylesheet.css */,
+			);
+			path = HTML;
+			sourceTree = "<group>";
+		};
+		AB0AF48B25CCA5FE00E2E4E7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AB0AF47D25CC90A800E2E4E7 /* Roboto-Italic.ttf */,
+				AB0AF47A25CC907800E2E4E7 /* RobotoMono-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		AB0AF48C25CCA61100E2E4E7 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				AB0E68C025C907D800F17D62 /* DetailViewController.swift */,
+				ABDE602625C8B9F500B6369B /* Preferences.swift */,
+				AB0E68F225CB42A700F17D62 /* FontScalingNavigationController.swift */,
+				AB0E68ED25CA2A0A00F17D62 /* SceneDelegate.swift */,
+				ABDE600D25C8AB6E00B6369B /* AppDelegate.swift */,
+				ABDE601325C8AB6E00B6369B /* Main.storyboard */,
+				ABDE601625C8AB6F00B6369B /* Assets.xcassets */,
+				ABDE601B25C8AB6F00B6369B /* Info.plist */,
+				ABDE601825C8AB6F00B6369B /* LaunchScreen.storyboard */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		AB0AF48D25CCA62700E2E4E7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AB0E68C725C9C8D900F17D62 /* UIView+Nib.swift */,
+				AB0E68CA25C9CE1A00F17D62 /* TrackView.xib */,
+				AB0E68CD25C9CE2700F17D62 /* TrackView.swift */,
+				AB0E68B925C8ECD900F17D62 /* SliderCell.xib */,
+				AB0E68BC25C8ECF400F17D62 /* SliderCell.swift */,
+				AB0AF48725CCA46200E2E4E7 /* UITableView+NibRegistration.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		ABDE600125C8AB6E00B6369B = {
 			isa = PBXGroup;
 			children = (
@@ -74,22 +127,10 @@
 		ABDE600C25C8AB6E00B6369B /* DynamicTypeDemo */ = {
 			isa = PBXGroup;
 			children = (
-				AB0E691425CBB6AD00F17D62 /* Roboto-Italic.ttf */,
-				AB0E68F225CB42A700F17D62 /* FontScalingNavigationController.swift */,
-				AB0E68ED25CA2A0A00F17D62 /* SceneDelegate.swift */,
-				ABDE600D25C8AB6E00B6369B /* AppDelegate.swift */,
-				ABDE601325C8AB6E00B6369B /* Main.storyboard */,
-				ABDE601625C8AB6F00B6369B /* Assets.xcassets */,
-				ABDE601825C8AB6F00B6369B /* LaunchScreen.storyboard */,
-				ABDE601B25C8AB6F00B6369B /* Info.plist */,
-				ABDE602625C8B9F500B6369B /* Preferences.swift */,
-				AB0E68B925C8ECD900F17D62 /* SliderCell.xib */,
-				AB0E68BC25C8ECF400F17D62 /* SliderCell.swift */,
-				AB0E68C025C907D800F17D62 /* DetailViewController.swift */,
-				AB0E68C725C9C8D900F17D62 /* UIView+Nib.swift */,
-				AB0E68CA25C9CE1A00F17D62 /* TrackView.xib */,
-				AB0E68CD25C9CE2700F17D62 /* TrackView.swift */,
-				AB0E68D025C9FE4200F17D62 /* example.html */,
+				AB0AF48C25CCA61100E2E4E7 /* Application */,
+				AB0AF48D25CCA62700E2E4E7 /* Views */,
+				AB0AF48B25CCA5FE00E2E4E7 /* Fonts */,
+				AB0AF48A25CCA5C100E2E4E7 /* HTML */,
 			);
 			path = DynamicTypeDemo;
 			sourceTree = "<group>";
@@ -151,11 +192,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB0AF47B25CC907800E2E4E7 /* RobotoMono-Regular.ttf in Resources */,
+				AB0AF48425CC94A100E2E4E7 /* stylesheet.css in Resources */,
 				ABDE601A25C8AB6F00B6369B /* LaunchScreen.storyboard in Resources */,
 				AB0E68BA25C8ECD900F17D62 /* SliderCell.xib in Resources */,
 				ABDE601725C8AB6F00B6369B /* Assets.xcassets in Resources */,
 				ABDE601525C8AB6E00B6369B /* Main.storyboard in Resources */,
-				AB0E691525CBB6AD00F17D62 /* Roboto-Italic.ttf in Resources */,
+				AB0AF47E25CC90A800E2E4E7 /* Roboto-Italic.ttf in Resources */,
 				AB0E68CB25C9CE1A00F17D62 /* TrackView.xib in Resources */,
 				AB0E68D125C9FE4200F17D62 /* example.html in Resources */,
 			);
@@ -172,6 +215,7 @@
 				ABDE600E25C8AB6E00B6369B /* AppDelegate.swift in Sources */,
 				ABDE602725C8B9F500B6369B /* Preferences.swift in Sources */,
 				AB0E68CE25C9CE2700F17D62 /* TrackView.swift in Sources */,
+				AB0AF48825CCA46200E2E4E7 /* UITableView+NibRegistration.swift in Sources */,
 				AB0E68F325CB42A700F17D62 /* FontScalingNavigationController.swift in Sources */,
 				AB0E68C125C907D800F17D62 /* DetailViewController.swift in Sources */,
 				AB0E68BD25C8ECF400F17D62 /* SliderCell.swift in Sources */,
@@ -324,7 +368,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JL4AKR8DVC;
-				INFOPLIST_FILE = DynamicTypeDemo/Info.plist;
+				INFOPLIST_FILE = DynamicTypeDemo/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -343,7 +387,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JL4AKR8DVC;
-				INFOPLIST_FILE = DynamicTypeDemo/Info.plist;
+				INFOPLIST_FILE = DynamicTypeDemo/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
