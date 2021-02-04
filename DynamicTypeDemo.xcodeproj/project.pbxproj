@@ -16,6 +16,7 @@
 		AB0E68D125C9FE4200F17D62 /* example.html in Resources */ = {isa = PBXBuildFile; fileRef = AB0E68D025C9FE4200F17D62 /* example.html */; };
 		AB0E68EE25CA2A0A00F17D62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0E68ED25CA2A0A00F17D62 /* SceneDelegate.swift */; };
 		AB0E68F325CB42A700F17D62 /* FontScalingNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0E68F225CB42A700F17D62 /* FontScalingNavigationController.swift */; };
+		AB0E691525CBB6AD00F17D62 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB0E691425CBB6AD00F17D62 /* Roboto-Italic.ttf */; };
 		ABDE600E25C8AB6E00B6369B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDE600D25C8AB6E00B6369B /* AppDelegate.swift */; };
 		ABDE601525C8AB6E00B6369B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABDE601325C8AB6E00B6369B /* Main.storyboard */; };
 		ABDE601725C8AB6F00B6369B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABDE601625C8AB6F00B6369B /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		AB0E68D025C9FE4200F17D62 /* example.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = example.html; sourceTree = "<group>"; };
 		AB0E68ED25CA2A0A00F17D62 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AB0E68F225CB42A700F17D62 /* FontScalingNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontScalingNavigationController.swift; sourceTree = "<group>"; };
+		AB0E691425CBB6AD00F17D62 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
 		ABDE600A25C8AB6E00B6369B /* DynamicTypeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicTypeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABDE600D25C8AB6E00B6369B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABDE601425C8AB6E00B6369B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 		ABDE600C25C8AB6E00B6369B /* DynamicTypeDemo */ = {
 			isa = PBXGroup;
 			children = (
+				AB0E691425CBB6AD00F17D62 /* Roboto-Italic.ttf */,
 				AB0E68F225CB42A700F17D62 /* FontScalingNavigationController.swift */,
 				AB0E68ED25CA2A0A00F17D62 /* SceneDelegate.swift */,
 				ABDE600D25C8AB6E00B6369B /* AppDelegate.swift */,
@@ -152,6 +155,7 @@
 				AB0E68BA25C8ECD900F17D62 /* SliderCell.xib in Resources */,
 				ABDE601725C8AB6F00B6369B /* Assets.xcassets in Resources */,
 				ABDE601525C8AB6E00B6369B /* Main.storyboard in Resources */,
+				AB0E691525CBB6AD00F17D62 /* Roboto-Italic.ttf in Resources */,
 				AB0E68CB25C9CE1A00F17D62 /* TrackView.xib in Resources */,
 				AB0E68D125C9FE4200F17D62 /* example.html in Resources */,
 			);

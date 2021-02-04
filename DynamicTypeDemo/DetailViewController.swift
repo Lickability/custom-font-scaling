@@ -12,7 +12,7 @@ class DetailViewController: UITableViewController {
     
     let preferences = Preferences()
     let systemSizeSwitch = UISwitch()
-    private let webView = WKWebView()
+    let webView = WKWebView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,53 +26,54 @@ class DetailViewController: UITableViewController {
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-       setupFont()
-  }
+        setupFont()
+    }
     
-    private func setupFont() {
+    func setupFont() {
         var scaledFont: UIFont!
         let styles: [UIFont.TextStyle] = [.headline, .body]
         for style in styles {
             scaledFont = UIFontMetrics(forTextStyle: style).scaledFont(for: .preferredFont(forTextStyle: style), compatibleWith: traitCollection)
         }
-    
+        
         guard let localHTMLURL = Bundle.main.url(forResource: "example", withExtension: "html"),
               let htmlString = try? String(contentsOf: localHTMLURL) else {
-                return
+            return
         }
         
-        let fontSetting = "<span style=\"font-family: \(scaledFont.fontName);font-size: \(scaledFont.pointSize)\"</span>"
-        webView.loadHTMLString( fontSetting + htmlString, baseURL: nil)
+        // A quick way to style html without adding a css stylesheet.
+        let fontSetting = "<span style=\"font-size: \(scaledFont.pointSize)\"</span>"
+        
+        webView.loadHTMLString(fontSetting + htmlString, baseURL: nil)
     }
     
-    @objc private func systemSizeSwitchTapped(sender: UISwitch) {
+    @objc func systemSizeSwitchTapped(sender: UISwitch) {
         preferences.shouldUseUserSelectedContentSizeCategory = !sender.isOn
         NotificationCenter.default.post(name: UIContentSizeCategory.didChangeNotification, object: nil)
     }
     
     // MARK: - UITableViewDelegate
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 2 {
-            return 300
+            return 500
         }
         
         return UITableView.automaticDimension
     }
-
     
     // MARK: - UITableViewDataSource
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
+        
         if indexPath.section == 0 {
             systemSizeSwitch.isOn = !preferences.shouldUseUserSelectedContentSizeCategory
             systemSizeSwitch.addTarget(self, action: #selector(systemSizeSwitchTapped(sender:)), for: .touchUpInside)
@@ -80,11 +81,12 @@ class DetailViewController: UITableViewController {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "switchCell") else {
                 return UITableViewCell()
             }
-            cell.textLabel?.font = .preferredFont(forTextStyle: .headline)
+            let customFont = UIFont(name: "Roboto-Italic", size: 17)!
+            cell.textLabel?.font = UIFontMetrics(forTextStyle: .headline).scaledFont(for: customFont)
             cell.textLabel?.adjustsFontForContentSizeCategory = true
-            cell.contentView.addSubview(systemSizeSwitch)
             cell.textLabel?.textAlignment = .right
             cell.textLabel?.text = "System Size"
+            cell.contentView.addSubview(systemSizeSwitch)
             return cell
             
         } else if indexPath.section == 1 {
@@ -104,7 +106,7 @@ class DetailViewController: UITableViewController {
             }
             return cell
         } else if indexPath.section == 2 {
-                
+            
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "webViewCell") else {
                 return UITableViewCell()
             }
@@ -113,7 +115,7 @@ class DetailViewController: UITableViewController {
             cell.contentView.addSubview(webView)
             return cell 
         }
-
+        
         return UITableViewCell()
     }
 }
