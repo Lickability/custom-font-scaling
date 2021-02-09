@@ -58,25 +58,22 @@ final class DetailViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "webViewCell")
         tableView.tableFooterView = UIView()
         tableView.separatorColor = .clear
-        setupFont()
+        reloadWebView()
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         
         // If the content category size has changed we need to reload the html.
-        setupFont()
+        reloadWebView()
     }
     
-    func setupFont() {
+    // MARK: - DetailViewController
+    
+    func reloadWebView() {
         
-        //Placeholder font.
-        var scaledFont: UIFont = .preferredFont(forTextStyle: .body)
-        
-        let styles: [UIFont.TextStyle] = [.headline, .body]
-        for style in styles {
-            scaledFont = UIFontMetrics(forTextStyle: style).scaledFont(for: .preferredFont(forTextStyle: style), compatibleWith: traitCollection)
-        }
+        //Setting a placeholder font since the font is loaded through CSS. The font now relies on the system to scale our custom font after calling `scaledFont`.
+        let scaledFont = UIFontMetrics(forTextStyle: .body).scaledFont(for: .preferredFont(forTextStyle: .body), compatibleWith: traitCollection)
         
         guard let localHTMLURL = Bundle.main.url(forResource: "example", withExtension: "html"),
               let htmlString = try? String(contentsOf: localHTMLURL) else {
@@ -88,9 +85,8 @@ final class DetailViewController: UITableViewController {
     }
     
     private func loadHTML(withFont font: UIFont, htmlString: String) {
-        // A quick way to style html without adding a css stylesheet.
-        let fontSetting = "<span style=\"font-size: \(font.pointSize)\"</span>"
         
+        let fontSetting = "<span style=\"font-size: \(font.pointSize)\"</span>"
         webView.loadHTMLString(fontSetting + htmlString, baseURL: Bundle.main.bundleURL)
     }
     
