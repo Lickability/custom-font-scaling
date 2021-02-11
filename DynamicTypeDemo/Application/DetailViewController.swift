@@ -72,7 +72,7 @@ final class DetailViewController: UITableViewController {
     
     func reloadWebView() {
         
-        //Setting a placeholder font since the font is loaded through CSS. The font now relies on the system to scale our custom font after calling `scaledFont`.
+        // Setting a placeholder font since the font is loaded through CSS. The font now relies on the system to scale our custom font after calling `scaledFont`.
         let scaledFont = UIFontMetrics(forTextStyle: .body).scaledFont(for: .preferredFont(forTextStyle: .body), compatibleWith: traitCollection)
         
         guard let localHTMLURL = Bundle.main.url(forResource: "example", withExtension: "html"),

@@ -1,11 +1,11 @@
 @font-face {
-    font-family: 'RobotoMono';
-    src: url('RobotoMono-Regular.ttf');
-    font-style: normal;
-    font-weight: normal;
+font-family: 'RobotoMono';
+src: url('RobotoMono-Regular.ttf');
+font-style: normal;
+font-weight: normal;
 }
 
 
 html {
-    font-family: 'RobotoMono';
+font-family: 'RobotoMono';
 }
